@@ -8,14 +8,14 @@ public class ArbolABBIteratorPreordenInverso<T extends Comparable<? super T>>
 		implements Iterador<T> {
 	private final Iterador<T> iterador;
 
-	public ArbolABBIteratorPreordenInverso(ArbolAVLExt<T> arbolAvl) {
-		this.iterador = generarRecorrido(arbolAvl).iterador();
+	public ArbolABBIteratorPreordenInverso(NodoABB<T> raiz) {
+		this.iterador = generarRecorrido(raiz).iterador();
 	}
 
-	private ListaEnlazadaNoOrdenada<T> generarRecorrido(ArbolAVLExt<T> arbolAvl) {
+	private ListaEnlazadaNoOrdenada<T> generarRecorrido(NodoABB<T> nodo) {
 		ListaEnlazadaNoOrdenada<T> resultado = new ListaEnlazadaNoOrdenada<T>();
 
-		resultado.addAll(agregarSubArbol(arbolAvl.getRaiz()));
+		resultado.addAll(agregarSubArbol(nodo));
 
 		return resultado;
 	}
@@ -30,7 +30,6 @@ public class ArbolABBIteratorPreordenInverso<T extends Comparable<? super T>>
 
 		if (nodoActual.tieneHijoIzquierdo())
 			resultado.addAll(agregarSubArbol(nodoActual.getHijoIzquierdo()));
-
 
 		return resultado;
 	}

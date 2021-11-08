@@ -9,14 +9,14 @@ public class ArbolABBIteradorInordenInverso<T extends Comparable<? super T>>
 
 	private final Iterador<T> iterador;
 
-	public ArbolABBIteradorInordenInverso(ArbolAVLExt<T> arbolAvl) {
-		this.iterador = generarRecorrido(arbolAvl).iterador();
+	public ArbolABBIteradorInordenInverso(NodoABB<T> raiz) {
+		this.iterador = generarRecorrido(raiz).iterador();
 	}
 
-	private ListaEnlazadaNoOrdenada<T> generarRecorrido(ArbolAVLExt<T> arbolAvl) {
+	private ListaEnlazadaNoOrdenada<T> generarRecorrido(NodoABB<T> nodo) {
 		ListaEnlazadaNoOrdenada<T> resultado = new ListaEnlazadaNoOrdenada<T>();
 
-		resultado.addAll(agregarSubArbol(arbolAvl.getRaiz()));
+		resultado.addAll(agregarSubArbol(nodo));
 
 		return resultado;
 	}

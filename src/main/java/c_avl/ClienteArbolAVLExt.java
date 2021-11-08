@@ -30,7 +30,7 @@ public class ClienteArbolAVLExt {
 		}
 
 		System.out.println("\nIterador en INORDEN INVERSO: ");
-		iteradorcito = arbolitoAVL.iteradorInordenInverso(); // 6, 7, 4, 2, 1, 3, 5
+		iteradorcito = arbolitoAVL.iteradorInordenInverso(); // 7, 6, 5, 4, 3, 2, 1
 		while (iteradorcito.existeSiguiente()) {
 			System.out.print("[" + iteradorcito.siguiente().toString() + "] ");
 		}

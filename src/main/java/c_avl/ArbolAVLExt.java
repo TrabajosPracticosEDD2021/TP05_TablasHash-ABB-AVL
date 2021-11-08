@@ -1,15 +1,10 @@
 package c_avl;
 
 import ar.edu.uner.fcad.ed.arbolesabbyavl.ArbolAVL;
-import ar.edu.uner.fcad.ed.arbolesabbyavl.NodoABB;
 import ar.edu.uner.fcad.ed.edlineales.iteradores.Iterador;
 
 public class ArbolAVLExt<T extends Comparable<? super T>> extends ArbolAVL<T>
 		implements ArbolAVLExtInterfaz<T> {
-
-	public NodoABB<T> getRaiz() {
-		return this.raiz;
-	}
 
 	/**
 	 * Define un iterador en preorden inverso para el árbol AVL. Para el ejemplo el
@@ -21,7 +16,7 @@ public class ArbolAVLExt<T extends Comparable<? super T>> extends ArbolAVL<T>
 		if (isEmpty())
 			throw new IllegalStateException("Arbol vacio");
 
-		Iterador<T> resultado = new ArbolABBIteratorPreordenInverso<T>(this);
+		Iterador<T> resultado = new ArbolABBIteratorPreordenInverso<T>(raiz);
 		return resultado;
 	}
 
@@ -35,7 +30,7 @@ public class ArbolAVLExt<T extends Comparable<? super T>> extends ArbolAVL<T>
 		if (isEmpty())
 			throw new IllegalStateException("Arbol vacio");
 
-		Iterador<T> resultado = new ArbolABBIteradorInordenInverso<T>(this);
+		Iterador<T> resultado = new ArbolABBIteradorInordenInverso<T>(raiz);
 		return resultado;
 	}
 
@@ -49,7 +44,7 @@ public class ArbolAVLExt<T extends Comparable<? super T>> extends ArbolAVL<T>
 		if (isEmpty())
 			throw new IllegalStateException("Arbol vacio");
 
-		Iterador<T> resultado = new ArbolABBIteradorPosordenInverso<T>(this);
+		Iterador<T> resultado = new ArbolABBIteradorPosordenInverso<T>(raiz);
 
 		return resultado;
 	}
